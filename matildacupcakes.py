@@ -1,5 +1,6 @@
 """
 Calculates Matilda's revenues from Cupcakes selling.
+Plot revenues (Weekly, Montly, Anually)
 """ 
 #Imports
 import glob
