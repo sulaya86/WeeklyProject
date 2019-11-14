@@ -63,8 +63,6 @@ def get_input_folder(path):
 
     sort_ascending['WorkWeek'] =  np.vectorize(calculate_week)(year,month,day)
 
-    print(sort_ascending)
-
     #Save the date in a  csv file
     sort_ascending.to_csv('Cupcakes.csv',index=False)
 
@@ -91,6 +89,9 @@ def get_input_folder(path):
     plt.ylabel("Revenue in $")
 
     plt.show()
+
+    # Saves yearly revenue plot to image file
+    plt.savefig('yearly.png')
 
     #Revenue per month
     monthly_revenue = sort_ascending.groupby(['Year','Month'])
@@ -121,6 +122,7 @@ def get_input_folder(path):
     plt.ylabel("Revenue in $")
 
     plt.show()
+    plt.savefig('montly.png')
 
     #Revenue per work week
     weekly_revenue = sort_ascending.groupby(['Year','WorkWeek'])
@@ -151,6 +153,8 @@ def get_input_folder(path):
     plt.ylabel("Revenue in $")
 
     plt.show()
+
+    #TODO: Subplots for every week
 
 def calculate_date(index):
     """Calculate the date based on the index, to define
